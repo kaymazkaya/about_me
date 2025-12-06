@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Muhamed Yusuf Kaymazkaya | Hakkımda & Projeler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Bingöl'den bir teknoloji meraklısının robotik, gömülü sistemler, haberleşme ve Astronex girişimi yolculuğu." />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-soft: #0b1020;
+      --bg-softer: #11172b;
+      --accent: #6366f1;
+      --accent-soft: rgba(99, 102, 241, 0.15);
+      --accent-strong: #4f46e5;
+      --accent-alt: #22c55e;
+      --text: #e5e7eb;
+      --text-soft: #9ca3af;
+      --border-subtle: rgba(148, 163, 184, 0.25);
+      --radius-lg: 20px;
+      --radius-xl: 26px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.75);
+      --transition-fast: 180ms ease-out;
+      --transition-med: 220ms ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 40%, #000 100%);
+      color: var(--text);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px 16px 64px;
+    }
+
+    /* NAVBAR */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.9),
+        rgba(15, 23, 42, 0.6),
+        transparent
+      );
+    }
+
+    .navbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 8px 4px 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 25% 0, #a855f7, #6366f1 40%, #0ea5e9 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.04em;
+      box-shadow: 0 0 25px rgba(129, 140, 248, 0.7);
+    }
+
+    .brand-text-main {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .brand-text-sub {
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-soft);
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: background var(--transition-fast), border-color var(--transition-fast),
+        color var(--transition-fast), transform 120ms ease-out;
+    }
+
+    .nav-links a:hover {
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text);
+      border-color: rgba(148, 163, 184, 0.45);
+      transform: translateY(-1px);
+    }
+
+    .nav-links a.nav-cta {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: white;
+      border-color: rgba(129, 140, 248, 0.7);
+      box-shadow: 0 12px 30px rgba(79, 70, 229, 0.55);
+      font-weight: 500;
+    }
+
+    .nav-links a.nav-cta:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: 0 14px 32px rgba(129, 140, 248, 0.7);
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      width: 16px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 999px;
+      position: relative;
+      transition: transform 160ms ease-out;
+    }
+
+    .nav-toggle span::before,
+    .nav-toggle span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 16px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 999px;
+      transition: transform 180ms ease-out, opacity 160ms ease-out, top 160ms ease-out,
+        bottom 160ms ease-out;
+    }
+
+    .nav-toggle span::before {
+      top: -5px;
+    }
+
+    .nav-toggle span::after {
+      bottom: -5px;
+    }
+
+    .nav-toggle.open span {
+      background: transparent;
+    }
+
+    .nav-toggle.open span::before {
+      top: 0;
+      transform: rotate(40deg);
+    }
+
+    .nav-toggle.open span::after {
+      bottom: 0;
+      transform: rotate(-40deg);
+    }
+
+    .nav-links-mobile {
+      display: none;
+    }
+
+    /* HERO */
+
+    main {
+      margin-top: 18px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.6fr);
+      gap: 28px;
+      align-items: center;
+      padding: 26px 18px 26px;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.16), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(129, 140, 248, 0.22), transparent 55%),
+        linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.9));
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -120px;
+      background:
+        radial-gradient(circle at 10% 100%, rgba(56, 189, 248, 0.05), transparent 60%),
+        radial-gradient(circle at 50% 0%, rgba(129, 140, 248, 0.08), transparent 55%),
+        radial-gradient(circle at 110% 15%, rgba(16, 185, 129, 0.08), transparent 50%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .hero-left,
+    .hero-right {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 11px;
+      color: var(--text-soft);
+      margin-bottom: 8px;
+    }
+
+    .hero-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #22c55e, #16a34a);
+      box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.3);
+    }
+
+    .hero-title {
+      font-size: clamp(27px, 3.1vw, 32px);
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, #a855f7, #6366f1, #22d3ee);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: var(--text-soft);
+      max-width: 540px;
+      line-height: 1.55;
+    }
+
+    .hero-subtitle strong {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0 14px;
+    }
+
+    .chip {
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.8);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-soft);
+    }
+
+    .chip-icon {
+      font-size: 13px;
+    }
+
+    .chip-accent {
+      background: rgba(79, 70, 229, 0.16);
+      border-color: rgba(129, 140, 248, 0.7);
+      color: #e0e7ff;
+    }
+
+    .chip-location {
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 9px 16px;
+      font-size: 13px;
+      border: 1px solid transparent;
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: background var(--transition-fast), transform 140ms ease-out,
+        box-shadow 140ms ease-out, border-color var(--transition-fast), color 140ms ease-out;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      border-color: rgba(129, 140, 248, 0.9);
+      box-shadow: 0 10px 26px rgba(79, 70, 229, 0.65);
+      font-weight: 500;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: 0 14px 30px rgba(79, 70, 229, 0.8);
+    }
+
+    .btn-ghost {
+      border-color: rgba(148, 163, 184, 0.5);
+      color: var(--text-soft);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.75);
+    }
+
+    .btn-icon {
+      font-size: 16px;
+      transform: translateY(1px);
+    }
+
+    /* HERO RIGHT */
+
+    .hero-right-card {
+      border-radius: 24px;
+      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.12), transparent),
+        radial-gradient(circle at 100% 0, rgba(129, 140, 248, 0.2), transparent),
+        rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 14px 14px 14px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.85);
+    }
+
+    .hero-right-badge {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      font-size: 10px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--text-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .hero-right-badge span {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #facc15, #eab308);
+      box-shadow: 0 0 0 4px rgba(250, 204, 21, 0.35);
+    }
+
+    .hero-right-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .hero-right-header h3 {
+      font-size: 13px;
+      color: #e5e7eb;
+    }
+
+    .hero-right-header p {
+      font-size: 10px;
+      color: var(--text-soft);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .hero-card-mini {
+      border-radius: 16px;
+      padding: 12px 11px;
+      background: radial-gradient(circle at 0 0, rgba(96, 165, 250, 0.16), transparent),
+        rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .hero-card-mini:nth-child(2) {
+      background: radial-gradient(circle at 100% 0, rgba(52, 211, 153, 0.18), transparent),
+        rgba(15, 23, 42, 0.95);
+    }
+
+    .hero-card-mini:nth-child(3) {
+      background: radial-gradient(circle at 0 100%, rgba(244, 114, 182, 0.17), transparent),
+        rgba(15, 23, 42, 0.97);
+    }
+
+    .hero-card-mini:nth-child(4) {
+      background: radial-gradient(circle at 100% 100%, rgba(129, 140, 248, 0.2), transparent),
+        rgba(15, 23, 42, 0.97);
+    }
+
+    .hero-card-label {
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .hero-card-value {
+      font-size: 13px;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .hero-card-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 4px;
+    }
+
+    .tag-pill {
+      font-size: 10px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      color: var(--text-soft);
+      white-space: nowrap;
+    }
+
+    .hero-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 6px;
+      padding-top: 8px;
+      border-top: 1px dashed rgba(148, 163, 184, 0.4);
+    }
+
+    .hero-footer-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #22c55e, #16a34a);
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.38);
+    }
+
+    .hero-footer-right {
+      display: flex;
+      gap: 4px;
+    }
+
+    .mini-btn {
+      font-size: 10px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--text-soft);
+      cursor: pointer;
+      transition: background var(--transition-fast), color var(--transition-fast),
+        transform 120ms ease-out, border-color var(--transition-fast);
+    }
+
+    .mini-btn:hover {
+      background: rgba(129, 140, 248, 0.12);
+      color: var(--text);
+      border-color: rgba(129, 140, 248, 0.8);
+      transform: translateY(-1px);
+    }
+
+    /* SECTIONS */
+
+    section {
+      margin-top: 32px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title span {
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #6366f1, #22c55e);
+    }
+
+    .section-subtitle {
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .section-card {
+      background: var(--bg-soft);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 16px 16px 14px;
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.85);
+    }
+
+    .about-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+      gap: 18px;
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    .about-body p + p {
+      margin-top: 8px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .badge {
+      font-size: 11px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: rgba(15, 23, 42, 0.95);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-soft);
+    }
+
+    .badge strong {
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      font-size: 11px;
+    }
+
+    .highlight-item {
+      background: radial-gradient(circle at 0 0, rgba(129, 140, 248, 0.25), transparent),
+        rgba(15, 23, 42, 0.95);
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      padding: 8px 9px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .highlight-item:nth-child(2) {
+      background: radial-gradient(circle at 100% 0, rgba(52, 211, 153, 0.22), transparent),
+        rgba(15, 23, 42, 0.95);
+    }
+
+    .highlight-item:nth-child(3) {
+      background: radial-gradient(circle at 0 100%, rgba(56, 189, 248, 0.22), transparent),
+        rgba(15, 23, 42, 0.95);
+    }
+
+    .highlight-item:nth-child(4) {
+      background: radial-gradient(circle at 100% 100%, rgba(248, 113, 113, 0.25), transparent),
+        rgba(15, 23, 42, 0.95);
+    }
+
+    .highlight-label {
+      color: var(--text-soft);
+    }
+
+    .highlight-value {
+      color: #e5e7eb;
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      font-size: 12px;
+    }
+
+    .skills-card {
+      border-radius: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: radial-gradient(circle at 0 0, rgba(129, 140, 248, 0.22), transparent),
+        rgba(15, 23, 42, 0.96);
+      padding: 10px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .skills-card:nth-child(2) {
+      background: radial-gradient(circle at 100% 0, rgba(56, 189, 248, 0.22), transparent),
+        rgba(15, 23, 42, 0.96);
+    }
+
+    .skills-card:nth-child(3) {
+      background: radial-gradient(circle at 50% 100%, rgba(34, 197, 94, 0.24), transparent),
+        rgba(15, 23, 42, 0.96);
+    }
+
+    .skills-card h3 {
+      font-size: 12px;
+      font-weight: 600;
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .skills-card h3 span {
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .skills-tags span {
+      font-size: 11px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      color: var(--text-soft);
+    }
+
+    .skills-note {
+      font-size: 11px;
+      color: var(--text-soft);
+      margin-top: 8px;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .project-card {
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: radial-gradient(circle at 0 0, rgba(129, 140, 248, 0.22), transparent),
+        rgba(15, 23, 42, 0.96);
+      padding: 12px 12px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 12px;
+      transition: transform 150ms ease-out, box-shadow 150ms ease-out, border-color 150ms ease-out;
+      cursor: default;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+      border-color: rgba(129, 140, 248, 0.85);
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: baseline;
+    }
+
+    .project-title {
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .project-pill {
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--text-soft);
+      white-space: nowrap;
+    }
+
+    .project-desc {
+      color: var(--text-soft);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 4px;
+    }
+
+    .project-tags span {
+      font-size: 10px;
+      padding: 3px 6px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--text-soft);
+    }
+
+    /* FLOW / PROCESS */
+
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      font-size: 11px;
+      margin-top: 12px;
+    }
+
+    .flow-step {
+      border-radius: 15px;
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.96);
+      padding: 8px 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .flow-step span {
+      font-size: 10px;
+      color: rgba(129, 140, 248, 0.9);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .flow-step strong {
+      color: #e5e7eb;
+    }
+
+    /* CONTACT */
+
+    .contact-card {
+      border-radius: var(--radius-xl);
+      padding: 16px 16px 15px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background:
+        radial-gradient(circle at 0 0, rgba(129, 140, 248, 0.32), transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.28), transparent 60%),
+        rgba(15, 23, 42, 0.96);
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 16px;
+      align-items: center;
+      box-shadow: 0 18px 46px rgba(15, 23, 42, 0.95);
+    }
+
+    .contact-card h3 {
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .contact-card p {
+      font-size: 12px;
+      color: var(--text-soft);
+      max-width: 420px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .contact-link {
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.96);
+      color: var(--text-soft);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: background var(--transition-fast), color var(--transition-fast),
+        border-color var(--transition-fast), transform 140ms ease-out;
+      word-break: break-all;
+    }
+
+    .contact-link strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .contact-link:hover {
+      background: rgba(15, 23, 42, 1);
+      color: var(--text);
+      border-color: rgba(129, 140, 248, 0.9);
+      transform: translateY(-1px);
+    }
+
+    .contact-hint {
+      font-size: 10px;
+      color: var(--text-soft);
+      margin-top: 6px;
+    }
+
+    footer {
+      margin-top: 22px;
+      font-size: 11px;
+      color: var(--text-soft);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      padding-top: 10px;
+    }
+
+    footer span strong {
+      color: #e5e7eb;
+    }
+
+    /* REVEAL ANIMATIONS */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 380ms var(--transition-med), transform 380ms var(--transition-med);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .navbar-inner {
+        padding-inline: 2px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links-mobile {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        padding: 8px 10px 12px;
+        background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.13), transparent 60%),
+          rgba(15, 23, 42, 0.98);
+        border-radius: 16px;
+        border: 1px solid rgba(148, 163, 184, 0.6);
+        margin-top: 8px;
+      }
+
+      .nav-links-mobile a {
+        font-size: 13px;
+        text-decoration: none;
+        color: var(--text-soft);
+        padding: 6px 4px;
+        border-radius: 10px;
+      }
+
+      .nav-links-mobile a:hover {
+        background: rgba(15, 23, 42, 0.95);
+        color: var(--text);
+      }
+
+      .nav-links-mobile a.nav-cta {
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        color: white;
+        text-align: center;
+        margin-top: 4px;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 22px 16px 18px;
+        border-radius: 24px;
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .about-body {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .highlight-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .skills-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .flow-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding-inline: 14px;
+      }
+
+      .hero {
+        padding-inline: 14px;
+      }
+
+      .section-card {
+        padding-inline: 13px;
+      }
+
+      .contact-card {
+        padding-inline: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">
+        <div class="brand-mark">YK</div>
+        <div>
+          <div class="brand-text-main">Muhamed Yusuf Kaymazkaya</div>
+          <div class="brand-text-sub">Bingöl · Deneyap Türkiye</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">Hakkımda</a>
+        <a href="#skills">Yetkinlikler</a>
+        <a href="#projects">Projeler</a>
+        <a href="#contact" class="nav-cta">İletişime Geç</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat">
+        <span></span>
+      </button>
+    </div>
+    <nav class="nav-links-mobile" id="navMobile">
+      <a href="#about">Hakkımda</a>
+      <a href="#skills">Yetkinlikler</a>
+      <a href="#projects">Projeler</a>
+      <a href="#contact" class="nav-cta">İletişime Geç</a>
+    </nav>
+  </header>
+
+  <div class="page">
+    <main>
+      <!-- HERO -->
+      <section class="hero reveal">
+        <div class="hero-left">
+          <div class="hero-eyebrow">
+            <div class="hero-dot"></div>
+            Aktif projeler, gerçek prototipler, çok yönlü bir süreç.
+          </div>
+          <h1 class="hero-title">
+            <span>Muhamed Yusuf Kaymazkaya</span> · Gömülü sistemler & Flutter geliştiricisi.
+          </h1>
+          <p class="hero-subtitle">
+            Türkiye’de <strong>Bingöl</strong>’de yaşayan bir teknoloji meraklısı ve
+            <strong>Deneyap Türkiye Teknoloji Atölyesi</strong> mezunu olarak;
+            robotik, gömülü sistemler, haberleşme teknolojileri ve
+            <strong>Astronex</strong> girişimiyle Türkiye’nin teknolojik bağımsızlığı için
+            çalışan bir geliştiriciyim. Maket akıllı ev sistemleri, hamilelik ve hasta takip
+            uygulamaları, çizgi izleyen robotlar ve deprem uyarı sistemleri üzerine çalışıyorum.
+          </p>
+
+          <div class="hero-chips">
+            <div class="chip chip-location">
+              <span class="chip-icon">📍</span>
+              Bingöl, Türkiye
+            </div>
+            <div class="chip chip-accent">
+              <span class="chip-icon">🤖</span>
+              Deneyap Türkiye Teknoloji Atölyesi Mezunu
+            </div>
+            <div class="chip">
+              <span class="chip-icon">🛰️</span>
+              Astronex · Savunma & Yazılım Girişimi
+            </div>
+            <div class="chip">
+              <span class="chip-icon">💻</span>
+              Flutter & Gömülü Sistem Geliştiricisi
+            </div>
+          </div>
+
+          <div class="hero-cta-row">
+            <a href="#projects" class="btn btn-primary">
+              Projelerime göz at
+              <span class="btn-icon">↗</span>
+            </a>
+            <a href="#contact" class="btn btn-ghost">
+              Benimle iletişime geç
+              <span class="btn-icon">✉️</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-right-card">
+            <div class="hero-right-badge">
+              <span></span>
+              Prototip odaklı, sahaya hazır çözümler.
+            </div>
+            <div class="hero-right-header">
+              <div>
+                <h3>Deneyap · Gömülü Sistem Panosu</h3>
+                <p>Arduino, ESP32, Deneyap Kart, PCB ve Flutter uygulamaları.</p>
+              </div>
+            </div>
+
+            <div class="hero-grid">
+              <div class="hero-card-mini">
+                <div class="hero-card-label">Teknofest Deneyimi</div>
+                <div class="hero-card-value">3× Finalist</div>
+                <div class="hero-card-tag-row">
+                  <span class="tag-pill">Takım çalışması</span>
+                  <span class="tag-pill">Saha doğrulaması</span>
+                </div>
+              </div>
+              <div class="hero-card-mini">
+                <div class="hero-card-label">Hands-on Projeler</div>
+                <div class="hero-card-value">PCB & Firebase</div>
+                <div class="hero-card-tag-row">
+                  <span class="tag-pill">Akıllı ev sistemleri</span>
+                  <span class="tag-pill">Deprem uyarı</span>
+                </div>
+              </div>
+              <div class="hero-card-mini">
+                <div class="hero-card-label">Geliştirme Tarafı</div>
+                <div class="hero-card-value">ESP32 & Flutter</div>
+                <div class="hero-card-tag-row">
+                  <span class="tag-pill">Mobil prototipler</span>
+                  <span class="tag-pill">PID robotlar</span>
+                </div>
+              </div>
+              <div class="hero-card-mini">
+                <div class="hero-card-label">Kullandığım Kartlar</div>
+                <div class="hero-card-value">Arduino · ESP32 · Deneyap Kart</div>
+                <div class="hero-card-tag-row">
+                  <span class="tag-pill">Sensör projeleri</span>
+                  <span class="tag-pill">ESP-NOW & PCB</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-footer">
+              <div class="hero-footer-left">
+                <div class="status-dot"></div>
+                <span>Fikirleri çalışan ürünlere dönüştürmeye odaklı.</span>
+              </div>
+              <div class="hero-footer-right">
+                <button class="mini-btn" onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})">
+                  Yeteneklere bak
+                </button>
+                <button class="mini-btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+                  Projeleri gör
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="reveal">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span></span>
+            Hakkımda
+          </h2>
+          <p class="section-subtitle">
+            Teknoloji merakından girişimciliğe uzanan bir yolculuk.
+          </p>
+        </div>
+
+        <div class="section-card">
+          <div class="about-body">
+            <div>
+              <p>
+                Türkiye’de <strong>Bingöl</strong>’de yaşayan bir teknoloji meraklısı ve
+                <strong>Deneyap Türkiye Teknoloji Atölyesi mezunu</strong> olarak,
+                <strong>robotik, gömülü sistemler</strong> ve
+                <strong>haberleşme teknolojileri</strong> üzerine yoğunlaşıyorum.
+              </p>
+              <p>
+                Arduino, ESP32 ve Deneyap Kart ile <strong>motor kontrolü</strong>,
+                <strong>sensör projeleri</strong>, <strong>ESP-NOW haberleşme</strong> ve
+                <strong>PCB tasarımı</strong> alanlarında aktif projeler geliştiriyor,
+                sadece teoride kalmayan, sahada test edilen çözümler üretmeye çalışıyorum.
+              </p>
+              <p>
+                Maket akıllı ev sistemleri, <strong>Firebase</strong> tabanlı
+                <strong>Flutter</strong> uygulamalar (G-EBE hamilelik takip, ebe hasta takip),
+                <strong>çizgi izleyen PID robotlar</strong> ve
+                <strong>deprem uyarı sistemi</strong> gibi projelerle gerçek dünya
+                problemlerine odaklanıyorum.
+              </p>
+              <p>
+                Ekibimle birlikte <strong>Teknofest’te üç kez finalist</strong> olduk; bu süreç
+                bana hem <strong>takım çalışmasını</strong> hem de gerçek problemler için
+                disiplinli bir şekilde çözüm üretmenin önemini öğretti.
+              </p>
+
+              <div class="badge-row">
+                <div class="badge">
+                  🎯 <strong>Hedefim:</strong> Türkiye’nin teknolojik bağımsızlığına katkı sağlayacak
+                  ürünler geliştirmek.
+                </div>
+                <div class="badge">
+                  🚀 <strong>Odak:</strong> Fikirleri; prototiplere, prototipleri ise çalışan sistemlere dönüştürmek.
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="highlight-grid">
+                <div class="highlight-item">
+                  <div class="highlight-label">Teknofest</div>
+                  <div class="highlight-value">3× Finalist</div>
+                  <div class="highlight-label">Savunma & Yazılım temelli projeler.</div>
+                </div>
+                <div class="highlight-item">
+                  <div class="highlight-label">Girişim · Astronex</div>
+                  <div class="highlight-value">Kurucu</div>
+                  <div class="highlight-label">Savunma, haberleşme ve yazılıma odaklı.</div>
+                </div>
+                <div class="highlight-item">
+                  <div class="highlight-label">Donanım Tarafı</div>
+                  <div class="highlight-value">PCB & Gömülü</div>
+                  <div class="highlight-label">Akıllı ev, deprem uyarı, robotik.</div>
+                </div>
+                <div class="highlight-item">
+                  <div class="highlight-label">Yazılım Tarafı</div>
+                  <div class="highlight-value">Flutter & Firebase</div>
+                  <div class="highlight-label">Sağlık ve takip uygulamaları.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="reveal">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span></span>
+            Yetkinlikler
+          </h2>
+          <p class="section-subtitle">
+            Donanım, yazılım ve sistem tasarımını aynı çatı altında topluyorum.
+          </p>
+        </div>
+
+        <div class="section-card">
+          <div class="skills-grid">
+            <div class="skills-card">
+              <h3>
+                Gömülü Sistemler
+                <span>Robotik & Kontrol</span>
+              </h3>
+              <div class="skills-tags">
+                <span>Arduino</span>
+                <span>ESP32</span>
+                <span>Deneyap Kart</span>
+                <span>Motor kontrol</span>
+                <span>Sensör projeleri</span>
+                <span>PID kontrol</span>
+                <span>Çizgi izleyen robotlar</span>
+              </div>
+            </div>
+
+            <div class="skills-card">
+              <h3>
+                Haberleşme & PCB
+                <span>Donanım Odaklı</span>
+              </h3>
+              <div class="skills-tags">
+                <span>ESP-NOW haberleşme</span>
+                <span>Çoklu kart iletişimi</span>
+                <span>PCB tasarımı</span>
+                <span>Akıllı ev kartları</span>
+                <span>Deprem uyarı devreleri</span>
+              </div>
+            </div>
+
+            <div class="skills-card">
+              <h3>
+                Yazılım & Prototip
+                <span>Flutter & Firebase</span>
+              </h3>
+              <div class="skills-tags">
+                <span>Flutter ile mobil uygulamalar</span>
+                <span>Firebase entegrasyonu</span>
+                <span>G-EBE hamilelik takip</span>
+                <span>Ebe hasta takip</span>
+                <span>UI/UX & prototip</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="skills-note">
+            Bu üç alan, <strong>Astronex</strong> çatısı altında savunma teknolojileri,
+            haberleşme ve sağlık odaklı özgün projelere dönüşüyor.
+          </p>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="reveal">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span></span>
+            Projelerim
+          </h2>
+          <p class="section-subtitle">
+            Maket akıllı evden hamilelik takibine, PID robotlardan deprem uyarı sistemine uzanan projeler.
+          </p>
+        </div>
+
+        <div class="section-card">
+          <div class="projects-grid">
+            <!-- 1: Maket Akıllı Ev -->
+            <article class="project-card">
+              <div class="project-top">
+                <h3 class="project-title">Maket Akıllı Ev Sistemi</h3>
+                <span class="project-pill">PCB · ESP32 · Firebase</span>
+              </div>
+              <p class="project-desc">
+                ESP32 tabanlı <strong>maket akıllı ev sistemi</strong> geliştiriyorum. Aydınlatma,
+                güvenlik ve sensör verilerini PCB üzerine kurulu kartlar ile toplayıp
+                <strong>Firebase</strong> üzerinden uzaktan izleyip kontrol edilebilen bir yapı kuruyorum.
+              </p>
+              <div class="project-tags">
+                <span>ESP32</span>
+                <span>PCB tasarımı</span>
+                <span>Akıllı ev otomasyonu</span>
+                <span>Firebase realtime</span>
+              </div>
+            </article>
+
+            <!-- 2: G-EBE -->
+            <article class="project-card">
+              <div class="project-top">
+                <h3 class="project-title">G-EBE Hamilelik Takip Uygulaması</h3>
+                <span class="project-pill">Flutter · Firebase</span>
+              </div>
+              <p class="project-desc">
+                Hamilelik sürecini <strong>dijital olarak takip</strong> etmeyi amaçlayan G-EBE
+                uygulamasında, Flutter ile kullanıcı dostu arayüzler ve
+                <strong>Firebase</strong> ile güvenli veri saklama ve bildirim alt yapısı üzerine
+                odaklanıyorum.
+              </p>
+              <div class="project-tags">
+                <span>Flutter</span>
+                <span>Firebase Auth & DB</span>
+                <span>Sağlık teknolojileri</span>
+                <span>Mobil UI/UX</span>
+              </div>
+            </article>
+
+            <!-- 3: Ebe Hasta Takip -->
+            <article class="project-card">
+              <div class="project-top">
+                <h3 class="project-title">Ebe Hasta Takip Uygulaması</h3>
+                <span class="project-pill">Flutter · Firebase</span>
+              </div>
+              <p class="project-desc">
+                Ebelerin hastalarını <strong>daha sistemli takip edebilmesi</strong> için
+                geliştirdiğim Flutter & Firebase tabanlı bir uygulama. Randevu, notlar,
+                uyarılar ve takip süreçleri tek ekranda toplanıyor.
+              </p>
+              <div class="project-tags">
+                <span>Hasta takip</span>
+                <span>Flutter</span>
+                <span>Firebase Cloud</span>
+                <span>Form & veri yönetimi</span>
+              </div>
+            </article>
+
+            <!-- 4: Çizgi İzleyen PID Robot -->
+            <article class="project-card">
+              <div class="project-top">
+                <h3 class="project-title">Çizgi İzleyen PID Robot</h3>
+                <span class="project-pill">ESP32 · PCB · PID</span>
+              </div>
+              <p class="project-desc">
+                <strong>PID kontrollü çizgi izleyen robotlar</strong> üzerinde çalışıyorum.
+                Motor sürücü, sensörler ve ESP32 için özel <strong>PCB tasarımı</strong> yaparak
+                stabil ve hızlı tepki veren bir kontrol sistemi kuruyorum.
+              </p>
+              <div class="project-tags">
+                <span>PID kontrol</span>
+                <span>ESP32</span>
+                <span>Robotik</span>
+                <span>Özel PCB</span>
+              </div>
+            </article>
+
+            <!-- 5: Deprem Uyarı Sistemi -->
+            <article class="project-card">
+              <div class="project-top">
+                <h3 class="project-title">Deprem Uyarı Sistemi</h3>
+                <span class="project-pill">ESP32 · PCB · Sensör</span>
+              </div>
+              <p class="project-desc">
+                ESP32 ve sensörler kullanarak <strong>deprem uyarı sistemi</strong> tasarlıyorum.
+                Özel PCB üzerinde titreşim verilerini işleyip, hızlı uyarı verebilen
+                bir gömülü sistem altyapısı oluşturuyorum.
+              </p>
+              <div class="project-tags">
+                <span>Deprem sensörleri</span>
+                <span>ESP32</span>
+                <span>PCB kart</span>
+                <span>Erken uyarı</span>
+              </div>
+            </article>
+
+            <!-- 6: Firebase & ESP32 Ortak Altyapı (genel kart) -->
+            <article class="project-card">
+              <div class="project-top">
+                <h3 class="project-title">ESP32 & Firebase Ortak Altyapı</h3>
+                <span class="project-pill">Backend · Entegrasyon</span>
+              </div>
+              <p class="project-desc">
+                Farklı projelerde tekrar kullanılabilen, <strong>ESP32 + Firebase</strong>
+                entegrasyon altyapısı kuruyorum. Böylece akıllı ev, deprem uyarı
+                ve diğer IoT projeleri için ortak, ölçeklenebilir bir temel oluşuyor.
+              </p>
+              <div class="project-tags">
+                <span>IoT altyapısı</span>
+                <span>ESP32</span>
+                <span>Firebase</span>
+                <span>Tekrar kullanılabilir kod</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="flow-grid">
+            <div class="flow-step">
+              <span>Adım 01</span>
+              <strong>Fikir & ihtiyacı anlamak</strong>
+              Gerçek bir problemi netleştirip, teknik gereksinimleri çıkarıyorum.
+            </div>
+            <div class="flow-step">
+              <span>Adım 02</span>
+              <strong>Prototip & devre tasarımı</strong>
+              Kart tasarımları, PCB ve gömülü yazılım ile ilk sürümü oluşturuyorum.
+            </div>
+            <div class="flow-step">
+              <span>Adım 03</span>
+              <strong>Test & iterasyon</strong>
+              Sahada test edip; hem donanım hem yazılım tarafında iyileştirme yapıyorum.
+            </div>
+            <div class="flow-step">
+              <span>Adım 04</span>
+              <strong>Ürünleştirme & entegrasyon</strong>
+              Mobil arayüzler ve sistem entegrasyonu ile ürüne dönüştürmeye çalışıyorum.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="reveal">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span></span>
+            İletişim & Bağlantılar
+          </h2>
+          <p class="section-subtitle">
+            Yeni projelere, takım çalışmalarına ve üretken iş birliklerine açığım.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <div>
+            <h3>Birlikte üretelim.</h3>
+            <p>
+              Robotik, gömülü sistemler, haberleşme teknolojileri, savunma odaklı sistemler
+              veya Flutter tabanlı prototip uygulamalar üzerine beraber çalışmak istersen,
+              aşağıdaki kanallardan bana ulaşabilirsin.
+            </p>
+          </div>
+          <div>
+            <div class="contact-links">
+              <!-- BU ALANLARI KENDİ BİLGİLERİNLE GÜNCELLE -->
+              <a class="contact-link" href="mailto:yusufkaymazkaya@astronex.dev">
+                <span>📧</span>
+                <span><strong>E-posta:</strong> yusufkaymazkaya@astronex.dev</span>
+              </a>
+              <a class="contact-link" href="https://github.com/kaymazkaya" target="_blank">
+                <span>💻</span>
+                <span><strong>GitHub:</strong> kaymazkaya</span>
+              </a>
+              <a class="contact-link" href="https://www.linkedin.com/in/kaymazkaya/" target="_blank">
+                <span>🌐</span>
+                <span><strong>LinkedIn:</strong> kaymazkaya</span>
+              </a>
+              <!-- NSosyal doğrulama linki (rel="me") -->
+              <a class="contact-link" rel="me" href="https://sosyal.teknofest.app/@kaymazkaya" target="_blank">
+                <span>🛰️</span>
+                <span><strong>NSosyal:</strong> @kaymazkaya</span>
+              </a>
+            </div>
+            <p class="contact-hint">
+              İpucu: <strong>E-posta adresini, sosyal medya ve NSosyal bağlantılarını</strong>
+              yukarıdaki linklerden kolayca kendine göre düzenleyebilirsin.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>
+        © <strong>Muhamed Yusuf Kaymazkaya</strong> · Deneyap Türkiye mezunu · Bingöl
+      </span>
+      <span>
+        Tasarım: Minimal, odaklı ve içerik merkezli bir kişisel portföy sayfası.
+      </span>
+    </footer>
+  </div>
+
+  <script>
+    // Basit mobil menü
+    const navToggle = document.getElementById('navToggle');
+    const navMobile = document.getElementById('navMobile');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navMobile.style.display === 'flex';
+      navMobile.style.display = isOpen ? 'none' : 'flex';
+      navToggle.classList.toggle('open', !isOpen);
+    });
+
+    // Mobilde linke tıklayınca menüyü kapat
+    navMobile.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMobile.style.display = 'none';
+        navToggle.classList.remove('open');
+      });
+    });
+
+    // Scroll ile bölümlere yumuşak geçiş
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const targetId = link.getAttribute('href').slice(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Reveal animasyonları
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15
+      }
+    );
+
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
